@@ -62,8 +62,8 @@ def use_openai_api(text, api_key):
     return response.choices[0].text.strip()
 
 def main():
-    st.title('Audio to Text Analysis Using AI')
-    api_key = st.text_input("Enter your OpenAI API Key:", type="password")
+    st.title('Fantasy Analysis via AI')
+    api_key = st.text_input("Enter your OpenAI API Key here:", type="password")
 
     input_method = st.radio("Choose input method:", options=['Upload Audio', 'YouTube Link', 'Paste Text'])
 
@@ -80,7 +80,7 @@ def main():
 
     elif input_method == 'YouTube Link':
         youtube_url = st.text_input("Enter YouTube URL:")
-        if youtube_url and st.button("Download and Process"):
+        if youtube_url and st.button("Analyze Linked Video"):
             audio_file_path = download_youtube_audio(youtube_url)
             text = speech_to_text(audio_file_path)
             if text:
