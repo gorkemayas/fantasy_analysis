@@ -6,6 +6,20 @@ import yt_dlp
 import os
 import tempfile
 
+# Configuration and style settings
+def set_page_config():
+    st.set_page_config(page_title="Fantasy Analysis via AI", layout="wide")
+    st.markdown("""
+        <style>
+            .stApp {
+                background-color: #FFFFFF;
+            }
+        </style>
+    """, unsafe_allow_html=True)
+    logo = "https://pasteboard.co/kOfArrOnfulQ.png"  
+    st.image(logo, width=100)  
+
+
 def download_youtube_audio(youtube_url):
     ydl_opts = {
         'format': 'bestaudio/best',
